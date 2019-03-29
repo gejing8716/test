@@ -1,0 +1,23 @@
+server:
+  port: 9000
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  server:
+    port: 12345
+zuul:
+  routes:
+    configserver:
+      path: /myConfig/**
+      serviceId: config
+    user:
+      path: /myUser/**
+      serviceId: provider
+  ignored-patterns:
+      - /config/**
+      - /gateway/**
+  sensitive-headers:
+
+

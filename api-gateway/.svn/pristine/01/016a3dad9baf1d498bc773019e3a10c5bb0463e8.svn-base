@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: gateway
+  cloud:
+    zookeeper:
+      discovery:
+        register: true
+      connect-string: 192.168.3.201:2182
+    config:
+      discovery:
+        service-id: config
+        enabled: true
